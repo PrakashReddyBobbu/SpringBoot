@@ -1,0 +1,48 @@
+JWT - used to generate token based on client details and secret key
+
+Two Types of Authentication
+1.Stateful Authentication()
+General web application uses Stateful Authentication like Facebook,PayTm
+NOTE : Browser to server we use state mechanism will use
+2.Stateless Authentication (JWT)
+Stateless Authentication used in case of
+1.webservice authentication (Server to Server)
+2.Horizontal Scaling (Micro Services)
+    Running the same applications on multiple servers to improve the performance
+3.Resource Grant (OAuth- open Authentication)
+Login with google,facebook used to login Quora,Redbus,Makemytrip...
+OAuth use similar token concept but not like JWT
+
+Advantages of Stateless Authentication
+*) no session id is created at server, so no memory needs to allocates
+*) good for distributed applications
+
+Disadvantage :
+*) every time token must be validate for every request
+*) using token another client can access server data
+
+JSON Format :
+{key:value,....}
+
+JWT Token Format:
+Header : JWT Specific information like type of algorithm,type of encoding
+Payload : Claims (client info like client id,client name,provider name, date, expDate)
+Signature : Base64Encode(Header) + Base64(Payload) <-  secret key(to encode & decode the token)
+
+EXample Token Format :
+xxxxxxxxxxxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyyyyyyyyy.zzzzzzzzzzzzzzzzzzzz
+
+
+1. Generate Token using JWT java API
+2. Read & validate Token using JWT java API
+
+Dependency to add to work with JWT
+<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.9.1</version>
+</dependency>
+
+
+
