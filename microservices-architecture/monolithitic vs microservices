@@ -1,0 +1,19 @@
+Basic
+Monolithic architecture is built as one large system and is usually one code-base
+Microservices architecture is built as small independent module based on business functionality
+
+Scale
+It is not easy to scale based on demand
+It is easy to scale based on demand.
+
+Database
+It has shared database
+Each project and module has their own database
+
+Deployment
+Large code base makes IDE slow and build time gets increase.
+Each project is independent and small in size. So overall build and development time gets decrease.
+
+Tightly Coupled and Loosely coupled
+It extremely difficult to change technology or language or framework because everything is tightly coupled and depend on each other
+Easy to change technology or framework because every module and project i

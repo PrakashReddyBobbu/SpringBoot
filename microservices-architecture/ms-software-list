@@ -1,0 +1,21 @@
+1.Config Server
+2.Config Client
+3.Feign Client
+4.Ribbon
+5.Eureka Naming Server
+6.Zuul APi Gateway
+7.sleuth
+
+8.Erlang
+9.RabbitMQ
+10.Zipkin
+
+11.spring cloud bus
+12.spring Hystrix
+
+
+https://www.erlang.org/downloads
+
+https://www.rabbitmq.com/download.html
+
+https://zipkin.io/pages/quickstart.html

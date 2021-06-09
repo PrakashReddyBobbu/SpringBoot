@@ -1,0 +1,4 @@
+set RABBIT_URI=amqp://localhost
+
+RestTemplate restTemplate = new RestTemplate();
+restTemplate.getForEntity("<url of service>",<REturn type>)
