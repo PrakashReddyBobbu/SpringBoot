@@ -26,7 +26,7 @@ Stop all running containers: docker stop $(docker ps -a -q)
 Delete all stopped containers: docker rm $(docker ps -a -q)
 
 Remove All Docker Images::
-docker image rm $(docker images)
+docker image rm $(docker images -a -q)
 
 Sharing/Push the Image to Data HUB::
 Step1 : login to docker hub
@@ -42,6 +42,61 @@ docker push pragashr/docker-demo
 untag the image with repo datahub
 docker images
 
+docker rmi <datahub repo>
+
 pull the image from datahub
 docker pull pragashr/docker-demo
+
+DOCKER COMPOSE ::
+-----------------
+Docker Compose is a tool for defining & running multi-container docker applications
+use yaml files to configure application services (docker-compose.yml)
+can start all services with a single command : docker compose up
+can stop all services with a single command : docker compose down
+can scale up selected services when required
+
+
+Step 1 : install docker compose
+in case of windows/mac docker-compose will get install along with docker installation
+
+veriosn of docker can be check using : docker-compose -v
+
+Step 2 : create docker-compose.yml file at any location on your system
+
+Step 3 : check the validaty of a file by using command
+	docker-compose config
+	
+Step 4 : run docker-compose.yml file by command
+		docker-compose up -d 
+
+Scale a particular service :
+
+docker-compose up -d --scale database=4
+
+
+
+Docker Containers :
+
+what are containers ?
+Running instance of of DOCKER IMAGE.
+
+docker run hello-world
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+docker run --name Myubuntu -it ubuntu
+
+docker start/stop/pause/unpause/kill/rm/history <container id>
+
+docker ps
+command to login to container :
+docker exec -it <containerid>/bin/bash
+
 
