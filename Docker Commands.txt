@@ -1,0 +1,47 @@
+Docker Commands :
+
+docker build --help
+
+docker build -t <tagName> <location>
+
+docker build -t hello .
+
+docker run <image>
+
+docker run hello
+
+docker ps - list the all the images info
+
+docker start <name of image>
+
+docker stop <name of image>
+
+docker rm <name of image>
+
+docker logs <name of image>
+
+
+
+Stop all running containers: docker stop $(docker ps -a -q)
+Delete all stopped containers: docker rm $(docker ps -a -q)
+
+Remove All Docker Images::
+docker image rm $(docker images)
+
+Sharing/Push the Image to Data HUB::
+Step1 : login to docker hub
+docker login
+
+Step 2 : Map image with data hub repository path 
+docker tag <imageName> <path from datahub>
+docker tag docker-image pragashr/docker-demo 
+
+Step 3 : 
+docker push pragashr/docker-demo
+
+untag the image with repo datahub
+docker images
+
+pull the image from datahub
+docker pull pragashr/docker-demo
+
