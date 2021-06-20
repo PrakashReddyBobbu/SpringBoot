@@ -1,0 +1,34 @@
+
+
+Amazon EC2 - Elastic Compute Cloud
+
+An Elastic Compute Cloud (EC2) instance is a virtual server that you can use to run applications in Amazon Web Services (AWS). When setting up an EC2 instance, you can custom-configure CPU, storage, memory, and networking resources. ... When you create an instance, you create it with an Amazon Machine Image (AMI).
+
+ssh ec2-user@https://my-aws-jars.s3.ap-south-1.amazonaws.com/02-todo-rest-api-h2-0.0.1-SNAPSHOT.jar
+
+
+
+SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network. 
+
+Connect to your Linux instance using SSH
+
+(Public DNS) To connect using your instance's public DNS name, enter the following command.
+ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
+
+
+(IPv6) Alternatively, if your instance has an IPv6 address, to connect using your instance's IPv6 address, enter the following command.
+ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-IPv6-address
+
+# get admin previleages
+sudo su
+
+# install httpd
+yum update -y
+
+yum install -y httpd24
+
+start httpd24 start
+
+chkconfig httpd on
+
+

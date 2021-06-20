@@ -1,0 +1,2 @@
+AWS User Id	Password	URL
+15cde01901	Pa$$w0rd	 https://885843804602.signin.aws.amazon.com/console

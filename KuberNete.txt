@@ -1,0 +1,98 @@
+
+
+Module 1 - Create a Kubernetes cluster :
+----------------------------------------
+
+minikube version
+
+Start the cluster, by running the minikube start command
+
+
+kubectl :To interact with Kubernetes during this bootcamp we’ll use the command line interface, 
+
+kubectl version
+
+kubectl cluster-info - view the cluster details. We’ll do that by running 
+
+To view the cluster-info run the kubectl cluster-info command
+
+To view the nodes in the cluster, run the kubectl get nodes command
+
+
+Module 2 - Deploying an App
+----------------------------
+kubectl basics 
+
+
+common format of a kubectl command is: kubectl action resource
+ action (like create, describe) 
+ resource (like node, container)
+ 
+ kubectl version
+ 
+ To view the nodes in the cluster, run the kubectl get nodes command
+ 
+ 
+ Deploy our app
+ --------------
+ 
+ kubectl create deployment <name of deployment> <app image location>
+ 
+ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
+ 
+ This performed a few things for you:
+	searched for a suitable node where an instance of the application could be run (we have only 1 available node)
+	scheduled the application to run on that Node
+	configured the cluster to reschedule the instance on a new Node when needed
+	
+To list your deployments use the get deployments command:
+
+kubectl get deployments
+
+We see that there is 1 deployment running a single instance of your app. The instance is running inside a Docker container on your node.
+
+View our app
+------------
+Pods that are running inside Kubernetes are running on a private, isolated network
+
+
+
+MOdule 3 - Viewing Pods and Nodes
+---------------------------------
+
+to view what containers are inside that Pod and what images are used to build those containers we run the describe pods command:
+
+kubectl describe pods
+
+
+View the container logs:
+
+	
+ 
+Module 5 - Scale up your app
+----------------------------
+
+To list your deployments use the get deployments command: kubectl get deployments
+
+To see the ReplicaSet created by the Deployment, run kubectl get rs
+
+Deployment to 4 replicas. We’ll use the kubectl scale command,
+
+kubectl scale deployments/kubernetes-bootcamp --replicas=4
+
+
+Configuring a Kubernetes Microservice::
+--------------------------------------
+Build and Deploy the Java microservices
+
+The two microservices you will deploy are called 'system' and 'inventory'. 
+
+The system microservice returns JVM properties of the container it is running in.
+
+The inventory microservice adds the properties from the system microservice into the inventory
+
+
+
+
+ 
+

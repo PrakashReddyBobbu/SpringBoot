@@ -28,6 +28,10 @@ Delete all stopped containers: docker rm $(docker ps -a -q)
 Remove All Docker Images::
 docker image rm $(docker images -a -q)
 
+
+
+
+
 Sharing/Push the Image to Data HUB::
 Step1 : login to docker hub
 docker login
@@ -99,4 +103,24 @@ docker ps
 command to login to container :
 docker exec -it <containerid>/bin/bash
 
+docker run --name jenkins-docker --rm --detach --privileged --network jenkins --network-alias docker --env DOCKER_TLS_CERTDIR=/certs --volume jenkins-docker-certs:/certs/client  --volume jenkins-data:/var/jenkins_home 
+  docker:dind
 
+
+
+docker run --name jenkins-blueocean --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 
+--volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8080:8080 --publish 50000:50000 myjenkins-blueocean:1.1
+
+jenkins setup :
+
+docker pull jenkins:2.60.3
+
+docker run -p 8080:8080 jenkins:2.60.3 
+
+docker exec -it edc3746cbfd7 /bin/bash
+
+user name : admin
+pswd : 2d1e54f92260465a95c31b9960029344
+
+
+d731a718da4a4f1286a7f43116d7dbdd
